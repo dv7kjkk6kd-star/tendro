@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tendro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#080C1A">
+<link rel="stylesheet" href="style.css">
+<script>try{if(localStorage.getItem("tendro-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+
+</head>
+<body>
+<canvas id="bgchart" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Tendro</a>
+    <nav aria-label="Hlavní navigace">
+      <a href="#jak">Jak to funguje</a>
+      <a href="#ukazka">Ukázka</a>
+      <a href="#cenik">Ceník</a>
+      <a href="#faq">Otázky</a>
+      <button type="button" class="theme" id="themeBtn">☀ Světlý režim</button>
+      <a class="btn btn-mark" href="#pilot">Chci pilot zdarma</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">AI nabídkové oddělení pro malé a střední firmy</div>
+      <h1 style="margin-top:16px">Nečtěte 200 stran. <mark>Vyhrávejte zakázky.</mark></h1>
+      <p class="lead">Tendro každé ráno vybere veřejné zakázky, které vaší firmě opravdu sedí. Řekne vám, jestli do nich jít, kolik za ně ostatní nabízeli a které doklady nesmíte zapomenout.</p>
+      <div class="ctas">
+        <a class="btn btn-mark" href="#pilot">Vyzkoušet 14 dní zdarma</a>
+        <a class="btn btn-ghost" href="#ukazka">Podívat se na ukázku</a>
+      </div>
+      <div class="facts">
+        <div><b>1 109 mld. Kč</b><span>trh veřejných zakázek v ČR za rok 2025</span></div>
+        <div><b>15 674</b><span>zadaných zakázek v roce 2025</span></div>
+        <div><b>5 minut</b><span>nastavení profilu firmy</span></div>
+      </div>
+    </div>
+
+    <div class="doc-stage anim" aria-label="Ukázka: Tendro čte zadávací dokumentaci">
+      <div class="doc">
+        <div class="hdr"><span>ZADÁVACÍ DOKUMENTACE · str. 14 / 186</span><span>č. j. MUPR/2026/0847</span></div>
+        <h4>7. Požadavky na kvalifikaci</h4>
+        <p>7.3 Technickou kvalifikaci dle § 79 odst. 2 písm. a) zákona prokáže dodavatel předložením seznamu stavebních prací, z nichž <span class="hl">alespoň 2 zakázky v hodnotě nad 3 000 000 Kč bez DPH</span> byly realizovány v posledních 5 letech.</p>
+        <h4>9. Obchodní a platební podmínky</h4>
+        <p>9.2 Dodavatel je povinen mít po celou dobu plnění sjednáno <span class="hl d2">pojištění odpovědnosti s limitem min. 5 000 000 Kč</span>. Kopii pojistné smlouvy předloží před podpisem smlouvy.</p>
+        <h4>11. Hodnocení nabídek</h4>
+        <p>11.1 Nabídky budou hodnoceny podle <span class="hl d3">nabídkové ceny (váha 80 %) a délky záruky (váha 20 %)</span>. Nabídka s nižší než 60měsíční zárukou bude vyřazena.</p>
+      </div>
+      <div class="note good n1"><b>Kvalifikace splněna</b>Máte 3 reference nad 3 mil. Kč (2023, 2024, 2025).</div>
+      <div class="note warn n2"><b>Chybí doklad</b>Vaše pojistka má limit 3 mil. Kč. Navyšte ji, než budete podepisovat.</div>
+      <div class="note n3"><b>Doporučení</b>Jděte do toho. Podobné zakázky v kraji vyhrávají za 91–97 % předpokládané hodnoty.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+<section id="jak">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Jak to funguje</div>
+      <h2>Tři kroky. Žádný tendrový specialista.</h2>
+    </div>
+    <div class="steps">
+      <div><span class="n" data-n="1">5 minut</span><h3>Popíšete firmu</h3><p class="muted">Obor, kraje, kde chcete pracovat, roční obrat, reference za posledních pět let a certifikáty. Tendro z toho pozná, co splníte.</p></div>
+      <div><span class="n" data-n="2">každé ráno</span><h3>Dostanete výběr</h3><p class="muted">E-mail s novými zakázkami seřazenými podle shody. U každé je jedna věta, proč se hodí nebo nehodí, a kolik zbývá dní do konce lhůty.</p></div>
+      <div><span class="n" data-n="3">před podáním</span><h3>Rozbor a kontrola</h3><p class="muted">U vybrané zakázky dostanete kvalifikaci bod po bodu s odkazem na stranu dokumentace, cenová data z minulých zakázek a seznam všech dokladů do nabídky.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ukazka" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Vyzkoušejte si to</div>
+      <h2>Takhle vypadá vaše ranní ukázka</h2>
+      <p class="muted">Vyberte obor a klikněte na zakázku. Data v ukázce jsou smyšlená. Po registraci uvidíte skutečné zakázky z věstníku a profilů zadavatelů.</p>
+    </div>
+    <div class="demo">
+      <div class="demo-bar">
+        <div class="field" style="flex:1 1 360px">
+          <span style="font-size:14px;font-weight:600" id="oborLbl">Obor</span>
+          <div class="chips" role="group" aria-labelledby="oborLbl" id="obory"></div>
+        </div>
+        <div class="field" style="flex:0 1 220px">
+          <label for="kraj">Kraj</label>
+          <select id="kraj">
+            <option>Hlavní město Praha</option><option selected>Středočeský</option><option>Jihomoravský</option><option>Moravskoslezský</option><option>Plzeňský</option><option>Olomoucký</option>
+          </select>
+        </div>
+      </div>
+      <div class="demo-body">
+        <div class="list" id="list" role="listbox" aria-label="Zakázky pro vás"></div>
+        <div class="detail" id="detail" aria-live="polite"></div>
+      </div>
+      <div class="disclaim">Tendro je pomocník, ne právník. Každé tvrzení odkazuje na stranu dokumentace, abyste si ho mohli ověřit, a za podanou nabídku odpovídá firma.</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Upřímné srovnání</div>
+      <h2>Co dostanete zdarma od státu a co přidá Tendro</h2>
+      <p class="muted">Portál ZakázkyGOV od MMR umí zakázky vyhledat a jeho AI chatbot shrne dokumentaci. Používejte ho. Tendro začíná tam, kde portál končí: u otázky, jestli to zvládne zrovna vaše firma a za kolik.</p>
+    </div>
+    <div class="tablebox">
+      <table class="compare">
+        <thead><tr><th>Funkce</th><th style="text-align:center">ZakázkyGOV</th><th style="text-align:center">Tendro</th></tr></thead>
+        <tbody>
+          <tr><td>Vyhledání zakázek a podání nabídky</td><td class="c yes">✓</td><td class="c no">použijte portál</td></tr>
+          <tr><td>Obecné shrnutí dokumentace</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Ranní výběr podle profilu a referencí vaší firmy</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+          <tr><td>Kvalifikace bod po bodu: splňujete / nesplňujete</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+          <tr><td>Za kolik podobné zakázky vyhrávají (registr smluv, výsledky řízení)</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+          <tr><td>Checklist dokladů a hlídání lhůt</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+          <tr><td>Koncept průvodního dopisu a čestných prohlášení</td><td class="c no">–</td><td class="c yes">Tým</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" id="navratnost">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Vyplatí se to?</div>
+      <h2>Spočítejte si návratnost</h2>
+    </div>
+    <div class="roi">
+      <div class="roi-in">
+        <div class="rng"><label for="rVal">Průměrná hodnota zakázky <output id="oVal"></output></label><input type="range" id="rVal" min="300000" max="20000000" step="100000" value="2500000"></div>
+        <div class="rng"><label for="rBids">Kolik nabídek ročně podáte <output id="oBids"></output></label><input type="range" id="rBids" min="1" max="60" step="1" value="10"></div>
+        <div class="rng"><label for="rHours">Hodin práce na jedné nabídce <output id="oHours"></output></label><input type="range" id="rHours" min="4" max="80" step="2" value="24"></div>
+        <div class="rng"><label for="rRate">Cena hodiny vašeho člověka <output id="oRate"></output></label><input type="range" id="rRate" min="300" max="2000" step="50" value="700"></div>
+        <div class="rng"><label for="rMargin">Vaše marže na zakázce <output id="oMargin"></output></label><input type="range" id="rMargin" min="3" max="30" step="1" value="10"></div>
+        <p class="muted" style="font-size:14px">Předpoklady výpočtu: Tendro ušetří 40 % hodin na nabídce a pomůže vám podat o 3 nabídky ročně víc; z nich vyhrajete jednu ze šesti. Čísla si upravte podle sebe, jsou to odhady, ne záruka.</p>
+      </div>
+      <div class="roi-out" aria-live="polite">
+        <small>Čistý přínos za rok po odečtení předplatného Profi</small>
+        <div class="big" id="roiBig">–</div>
+        <div class="row"><span>Ušetřený čas</span><b id="roiTime">–</b></div>
+        <div class="row"><span>Marže z navíc vyhraných zakázek</span><b id="roiWin">–</b></div>
+        <div class="row"><span>Předplatné Profi za rok</span><b id="roiCost">–</b></div>
+        <div class="row"><span>Návratnost</span><b id="roiX">–</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cenik" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Ceník</div>
+      <h2>Jedna vyhraná zakázka zaplatí roky předplatného</h2>
+      <p class="muted">Ceny jsou bez DPH. Bez úvazku, zrušit můžete kdykoli k poslednímu dni měsíce.</p>
+    </div>
+    <div class="toggle" role="group" aria-label="Fakturace">
+      <button type="button" id="bm" aria-pressed="true">Měsíčně</button>
+      <button type="button" id="by" aria-pressed="false">Ročně (2 měsíce zdarma)</button>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Hlídač</h3>
+        <div class="p" data-m="990">990 Kč<small> / měsíc</small></div>
+        <p class="muted">Pro firmy, které chtějí vědět, co se vypisuje.</p>
+        <ul><li>Ranní výběr podle profilu firmy</li><li>Skóre shody a důvod u každé zakázky</li><li>Hlídání lhůt</li><li>1 uživatel</li></ul>
+        <a class="btn btn-line" href="#pilot" data-plan="Hlídač">Začít s Hlídačem</a>
+      </div>
+      <div class="plan top">
+        <span class="badge">NEJČASTĚJŠÍ VOLBA</span>
+        <h3>Profi</h3>
+        <div class="p" data-m="2990">2 990 Kč<small> / měsíc</small></div>
+        <p class="muted">Pro firmy, které podávají aspoň jednu nabídku měsíčně.</p>
+        <ul><li>Vše z Hlídače</li><li>10 rozborů zakázek měsíčně</li><li>Cenová data: kdo vyhrál a za kolik</li><li>Checklist dokladů do nabídky</li><li>2 uživatelé</li></ul>
+        <a class="btn btn-mark" href="#pilot" data-plan="Profi">Vyzkoušet Profi zdarma</a>
+      </div>
+      <div class="plan">
+        <h3>Tým</h3>
+        <div class="p" data-m="7990">7 990 Kč<small> / měsíc</small></div>
+        <p class="muted">Pro firmy, kde je tendr každý týden.</p>
+        <ul><li>Vše z Profi</li><li>Neomezené rozbory</li><li>Koncept průvodního dopisu a čestných prohlášení</li><li>Kontrola úplnosti před podáním</li><li>Až 5 uživatelů</li></ul>
+        <a class="btn btn-line" href="#pilot" data-plan="Tým">Domluvit Tým</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Pro koho</div>
+      <h2>Firmy, které práci umí, ale papíry je zdržují</h2>
+    </div>
+    <div class="sectors">
+      <div><h3>Stavby a rekonstrukce</h3><span class="cpv">CPV 45000000</span><p class="muted">Školy, chodníky, tělocvičny, zateplení obecních budov.</p></div>
+      <div><h3>IT a software</h3><span class="cpv">CPV 72000000</span><p class="muted">Weby obcí, správa sítí, licence, kybernetická bezpečnost.</p></div>
+      <div><h3>Úklid a údržba</h3><span class="cpv">CPV 90910000</span><p class="muted">Úklid úřadů, škol a nemocnic, správa budov.</p></div>
+      <div><h3>Zeleň a komunální služby</h3><span class="cpv">CPV 77310000</span><p class="muted">Sečení, kácení, výsadby, zimní údržba.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Časté otázky</div>
+      <h2>Na co se firmy ptají</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Odkud berete zakázky?</summary><p>Z veřejně dostupných zdrojů: Věstník veřejných zakázek, Národní elektronický nástroj (NEN), profily zadavatelů a evropská databáze TED. Ceny vítězných nabídek dohledáváme v registru smluv a ve výsledcích zadávacích řízení.</p></details>
+      <details><summary>Může se AI splést?</summary><p>Ano, a proto každé tvrzení odkazuje na konkrétní stranu dokumentace. Tendro vám šetří čas a upozorní na rizika, ale konečné rozhodnutí a odpovědnost za nabídku zůstává na vaší firmě.</p></details>
+      <details><summary>Co děláte s údaji o mé firmě?</summary><p>Používáme je jen k vyhodnocení zakázek pro vás. Neprodáváme je, neukazujeme je jiným klientům a na požádání je smažeme. Podrobnosti najdete v zásadách ochrany osobních údajů.</p></details>
+      <details><summary>Podáváte nabídku za nás?</summary><p>Ne. Nabídku podáváte vy přes elektronický nástroj zadavatele nebo portál ZakázkyGOV. Tendro vám připraví podklady a zkontroluje, že nic nechybí.</p></details>
+      <details><summary>Jak dlouho trvá nastavení?</summary><p>Zhruba pět minut na profil firmy. První ranní výběr dostanete následující pracovní den.</p></details>
+      <details><summary>Jak zruším předplatné?</summary><p>Jedním e-mailem nebo v nastavení účtu, kdykoli k poslednímu dni měsíce. U ročního předplatného vrátíme poměrnou část.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="pilot" id="pilot">
+  <div class="wrap">
+    <div>
+      <div class="sec-head">
+        <div class="kick">Pilotní program</div>
+        <h2>Prvních 20 firem: 14 dní zdarma a sleva 30 % na první rok</h2>
+      </div>
+      <ul>
+        <li>Do dvou pracovních dnů vám pošleme rozbor tří aktuálních zakázek ve vašem oboru.</li>
+        <li>Zakládá se jen profil firmy, platební kartu nechcete.</li>
+        <li>Na oplátku chceme 15 minut zpětné vazby po telefonu.</li>
+      </ul>
+    </div>
+    <form class="form" id="form" novalidate>
+      <div id="formFields" style="display:grid;gap:14px">
+        <div class="two">
+          <div class="field"><label for="fName">Jméno a příjmení</label><input id="fName" autocomplete="name" required></div>
+          <div class="field"><label for="fFirm">Firma</label><input id="fFirm" autocomplete="organization" required></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="fIco">IČO</label><input id="fIco" inputmode="numeric" maxlength="8" placeholder="8 číslic"></div>
+          <div class="field"><label for="fMail">E-mail</label><input id="fMail" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="fObor">Obor</label><select id="fObor"><option>Stavby a rekonstrukce</option><option>IT a software</option><option>Úklid a údržba</option><option>Zeleň a komunální služby</option><option>Jiný obor</option></select></div>
+          <div class="field"><label for="fPlan">Balíček</label><select id="fPlan"><option>Hlídač</option><option selected>Profi</option><option>Tým</option><option>Zatím nevím</option></select></div>
+        </div>
+        <div class="field"><label for="fNote">Na jaké zakázky cílíte? (nepovinné)</label><textarea id="fNote" rows="3" placeholder="Např. rekonstrukce škol ve Středočeském kraji do 10 mil. Kč"></textarea></div>
+        <label class="consent"><input type="checkbox" id="fOk"><span>Souhlasím se zpracováním údajů za účelem pilotního programu. Údaje nesdílíme s nikým dalším.</span></label>
+        <div class="err" id="fErr" role="alert"></div>
+        <button class="btn btn-blue" type="submit" style="justify-content:center">Přihlásit se do pilotu</button>
+      </div>
+      <div class="done" id="done" hidden>
+        <h3>Skoro hotovo</h3>
+        <p>Pošlete nám prosím tuto zprávu na <strong class="mono" id="contactTxt"></strong>. Ozveme se do jednoho pracovního dne.</p>
+        <pre id="msg"></pre>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <button class="btn btn-blue" type="button" id="copyMsg">Zkopírovat zprávu</button>
+          <a class="btn btn-line" id="mailLink" href="#">Otevřít v e-mailu</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top">Tendro</a>
+      <p style="margin-top:10px">AI nabídkové oddělení pro malé a střední firmy. Provozovatel: [Jméno Příjmení], IČO [doplnit], [sídlo]. Kontakt: <span class="mono" id="contactFoot"></span></p>
+    </div>
+    <div>
+      <p>Údaje o trhu: Výroční zpráva o elektronizaci a stavu veřejných zakázek v ČR za rok 2025 (MMR). Tendro není poskytovatelem právních služeb a nepodává nabídky jménem klienta. Ukázky na této stránce používají smyšlená data.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
